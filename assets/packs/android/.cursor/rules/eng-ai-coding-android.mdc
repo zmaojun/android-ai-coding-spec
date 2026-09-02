@@ -1,0 +1,15 @@
+---
+description: 在 AI 辅助 Android 变更中遵守线程、生命周期、UI 状态与资源边界
+alwaysApply: false
+---
+# Android AI Coding 工程边界
+
+涉及 Android 实现时：
+
+- 网络、磁盘、重量级数据库和大图处理不得运行在主线程。
+- 异步回调、观察者、Receiver 与资源必须遵守宿主生命周期，并成对注册和释放。
+- Activity、Fragment、View 与 Adapter 只承担界面职责，不承载网络、持久化或业务编排。
+- UI 状态保持单一真源，避免 DataBinding、观察回调和手工更新并行驱动同一状态。
+- 不在长生命周期对象中持有 Activity、Fragment、View 或其他短生命周期对象。
+- 用户可见文本与颜色、字号、间距等资源应使用项目既有资源和设计 token。
+- 修改前读取目标项目自己的架构与 UI 规则；项目规则比本通用薄规则更具体时，以项目规则为准。

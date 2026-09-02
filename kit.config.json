@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "product": "android-ai-coding",
+  "productVersion": "1.1.0",
+  "rulesWhitelist": [
+    ".cursor/rules/eng-ai-coding-workflow.mdc",
+    ".cursor/rules/eng-ai-coding-android.mdc",
+    ".cursor/rules/domain-ai-coding-medical.mdc"
+  ],
+  "packs": {
+    "core": {
+      "version": "1.1.0",
+      "layer": "core",
+      "path": "assets/packs/core",
+      "dependencies": [],
+      "softDependencies": [],
+      "overrides": []
+    },
+    "android": {
+      "version": "1.0.0",
+      "layer": "platform",
+      "path": "assets/packs/android",
+      "dependencies": ["core"],
+      "softDependencies": [],
+      "overrides": []
+    },
+    "android-medical": {
+      "version": "1.0.0",
+      "layer": "domain",
+      "path": "assets/packs/android-medical",
+      "dependencies": ["android"],
+      "softDependencies": [],
+      "overrides": []
+    },
+    "domain-glucose": {
+      "version": "1.0.0",
+      "layer": "domain",
+      "path": "assets/packs/domain-glucose",
+      "dependencies": ["android-medical"],
+      "softDependencies": [
+        {
+          "type": "skill",
+          "name": "flow-clinical-list-pipeline",
+          "path": ".cursor/skills/flow-clinical-list-pipeline/SKILL.md"
+        }
+      ],
+      "overrides": []
+    },
+    "smartpro": {
+      "version": "1.0.0",
+      "layer": "project",
+      "path": "assets/packs/smartpro",
+      "dependencies": ["android-medical"],
+      "softDependencies": [],
+      "overrides": [
+        "docs/ai-coding/README.md",
+        "docs/ai-coding/governance/project.md"
+      ]
+    }
+  },
+  "profiles": {
+    "core": {
+      "packs": ["core"]
+    },
+    "android": {
+      "packs": ["android"]
+    },
+    "android-medical": {
+      "packs": ["android-medical"]
+    },
+    "smartpro": {
+      "packs": ["domain-glucose", "smartpro"]
+    }
+  }
+}

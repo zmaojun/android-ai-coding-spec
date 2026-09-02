@@ -1,0 +1,15 @@
+---
+description: 在 AI 辅助变更中执行 Android 医疗软件安全边界
+alwaysApply: false
+---
+# Android 医疗软件 AI Coding 规则
+
+涉及医疗、患者、设备、HIS、同步、安全、持久化或时间处理时，必须读取 `docs/ai-coding/governance/domain-boundaries.md`。
+
+- 除非获得明确批准，否则使用 Java 及项目现有 XML/UI 架构。
+- 网络、数据库、文件和设备 IO 禁止在主线程执行。
+- 异步更新 UI 前必须确认宿主生命周期仍然有效。
+- 禁止在静态对象或长生命周期对象中持有 UI、Activity、Fragment 等生命周期对象。
+- 禁止自行推断或发明医疗、协议、身份、同步及安全行为。
+- 禁止在日志中输出可识别患者身份的数据或凭据。
+- 高风险变更必须经过人工评审，并提供适用的设备或集成验证证据。

@@ -1,0 +1,17 @@
+---
+description: 对非平凡工程变更执行已安装的 AI Coding 治理流程
+alwaysApply: false
+---
+# AI Coding 治理规则
+
+处理非平凡工程任务时：
+
+1. 读取 `docs/ai-coding/governance/constitution.md`、`docs/ai-coding/governance/decision-boundaries.md` 和当前项目规格。
+2. 遵循 `.cursor/skills/ai-coding/SKILL.md`。
+3. 提出新抽象前，检查现有代码及可复用的职责归属类。
+4. 完成风险分级；触及人工决策边界时停止并请求确认。
+5. 只实现已批准的方案，并拆分为可独立评审的小任务。
+6. 评审正确性、架构、安全性、可测试性及项目专属规则。
+7. 只报告实际执行过的验证及其真实结果。
+
+项目规则比本通用基线更具体时，以项目规则为准。

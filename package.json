@@ -1,0 +1,34 @@
+{
+  "name": "android-ai-coding",
+  "version": "1.1.0",
+  "description": "可声明、可组合的 Android AI Coding 治理与执行工作流安装包。",
+  "type": "module",
+  "bin": {
+    "android-ai-coding": "bin/android-ai-coding.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "doctor": "node bin/android-ai-coding.mjs doctor"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "assets",
+    "kit.config.json",
+    "docs",
+    "CHANGELOG.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "ai-coding",
+    "cursor",
+    "openspec",
+    "android",
+    "workflow"
+  ],
+  "license": "MIT"
+}
